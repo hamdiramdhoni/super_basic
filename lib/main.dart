@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:super_basic/app_style.dart';
 
 void main() {
   runApp(const MyApp());
@@ -11,11 +12,8 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'Flutter Demo',
-      theme: ThemeData(
-        colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
-        useMaterial3: true,
-      ),
-      home: const MyHomePage(title: 'ABC'),
+      theme: AppStyle().themeData,
+      home: const MyHomePage(title: 'Flutter Demo Home Page'),
     );
   }
 }
@@ -31,6 +29,18 @@ class MyHomePage extends StatefulWidget {
 
 class _MyHomePageState extends State<MyHomePage> {
   int _counter = 0;
+
+  @override
+  void initState() {
+    super.initState();
+    //   print("masuk init state");
+    //   Future.delayed(const Duration(seconds: 2), () {
+    //     setState(() {
+    //       _counter = 5;
+    //       print("counter is set to 5");
+    //     });
+    //   });
+  }
 
   void _incrementCounter() {
     setState(() {
